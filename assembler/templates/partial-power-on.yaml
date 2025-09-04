@@ -1,0 +1,22 @@
+formatVersion: 1
+inputs: {}
+resources:
+  vm01:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: rocky-201
+      flavor: Small
+      networks:
+        - network: ${resource.seg01.id}
+  vm02:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: rocky-202
+      flavor: Small
+      networks:
+        - network: ${resource.seg01.id}
+      initialPowerOn: 'no'
+  seg01:
+    type: Cloud.vSphere.Network
+    properties:
+      networkType: existing
