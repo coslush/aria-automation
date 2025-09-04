@@ -1,0 +1,27 @@
+formatVersion: 1
+inputs:
+  studentID:
+    type: string
+    title: Student ID
+    default: stu01
+resources:
+  vmw01-11:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: vmw101-11-template
+      flavor: Small
+      tags:
+        - key: courseID
+          value: vmw101
+        - key: studentID
+          value: ${input.studentID}
+      networks:
+        - network: ${resource.vmw101-seg01.id}
+  vmw01-seg01:
+    type: Cloud.vSphere.Network
+    properties:
+      networkType: existing
+      constraints:
+        - tag: courseID:vmw101
+        - tag: studentID:${input.studentID}
+        - tag: networkID:seg01
