@@ -1,0 +1,7 @@
+Name: PreventPowerOn
+Event Topic: Compute initial power on
+Condition:
+  Filter events by topic: Yes
+  event.data.customProperties.initialPowerOn == 'no'
+Action/workflow: PreventPowerOn
+Blocking: Yes
