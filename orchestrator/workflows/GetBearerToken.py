@@ -6,7 +6,7 @@
 #    Outputs:
 #        bearerToken : string
 #
-#    Note: This should probably be changed to an Action
+#    Note: Moved to the getBearerToken.py action
 #
 #    Source: 
 #       https://cloudblogger.co.in/2024/04/10/simplest-way-to-generate-bearer-token-in-orchestrator-for-aria-automation-cb10135/
